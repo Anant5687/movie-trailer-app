@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
+import LoginCard from '../components/login-card/login-card';
 
 const Login = () => {
-  return (
-    <div>Login</div>
-  )
-}
+  return <LoginCard />;
+};
 
-export default Login
+export default Login;
