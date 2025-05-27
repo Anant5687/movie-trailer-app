@@ -6,16 +6,19 @@ import Button from '../button';
 import { LoginFields } from '../../utils/constants';
 
 const LoginCard = () => {
-
   const [values, setValues] = useState({
-    name: 'ma,e',
-    password: 'pass' 
-  })
+    name: '',
+    password: '',
+  });
 
   const onChange = (i, e) => {
-    
-    LoginFields[i].value += e.target.value;
-    console.log(LoginFields[i]);
+    setValues({ ...values, [e.target.id]: e.target.value });
+  };
+
+  const onSubmitHandeler = () => {
+    if (values?.name?.trim() === '' || values?.password?.trim() === '') {
+      return;
+    }
   };
 
   return (
@@ -25,14 +28,14 @@ const LoginCard = () => {
           <Input
             key={i}
             placeholder={ele.placeholder}
-            value={ele.value}
+            value={values?.ele?.id}
             type={ele.type}
             ind={i}
             id={ele.id}
             onChange={onChange}
           />
         ))}
-        <Button btntext={'Sign In'} />
+        <Button btntext={'Sign In'} onClick={onSubmitHandeler} />
       </div>
     </div>
   );
