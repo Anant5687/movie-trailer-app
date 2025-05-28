@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
+import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
+
 import Input from '../input/input';
+import Button from '../button';
+
+import { CookieNames, LoginFields } from '../../utils/constants';
+
 
 import './style.css';
-import Button from '../button';
-import { LoginFields } from '../../utils/constants';
 
 const LoginCard = () => {
+  const [_, setCookie] = useCookies(CookieNames);
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     name: '',
     password: '',
@@ -19,6 +26,8 @@ const LoginCard = () => {
     if (values?.name?.trim() === '' || values?.password?.trim() === '') {
       return;
     }
+    setCookie('token', values?.password, { path: '/' });
+    navigate('/', { replace: true });
   };
 
   return (
