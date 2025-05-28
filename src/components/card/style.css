@@ -1,3 +1,31 @@
-.movie_card{
+.movie_card {
+  border-radius: 10px;
+  box-shadow: 0 0 5px #fff;
+  width: 186px;
+}
 
+.img_container {
+  height: 280px;
+  width: 186px;
+  object-fit: cover;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.movie_name {
+  font-size: 14px;
+  font-weight: 100;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin: 0 !important
+}
+
+.movie_name .link {
+  color: #ffffff;
+  text-decoration: none
 }
