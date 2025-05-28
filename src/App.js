@@ -1,11 +1,11 @@
 import './App.css';
 
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
 import Details from './pages/Details';
 import Login from './pages/Login';
 import Protected from './components/protected';
 import Logo from './svgs/logo';
+import Home from './pages/Home/Home';
 
 function App() {
   return (
