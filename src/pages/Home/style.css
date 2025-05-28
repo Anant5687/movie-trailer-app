@@ -1,9 +1,32 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
 .home_page{
     color: #FFFFFF;
     padding: 14px;
     display: grid;
     gap: 16px;
     grid-template-columns: repeat(2, 1fr);
+}
+
+.search-bar{
+  position: relative;
+  border: 2px solid #00afff;
+  background: white;
+  border-radius: 16px;
+  padding: 6px;
+  width: 40%;
+  margin-bottom: 20px
+}
+
+.search-bar .text-bar{
+  border: none;
+  padding: 6px;
+  outline: none
 }
   
   @media (min-width: 768px) {
